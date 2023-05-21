@@ -32,8 +32,8 @@ function Content({
 }: ContentProps) {
   return (
     <styles.Content className="content" {...colors} height={height}>
-      {commands.map((section) => (
-        <CommandSection {...{ ...section, ...colors }} />
+      {commands.map((section, i) => (
+        <CommandSection key={i} {...{ ...section, ...colors }} />
       ))}
     </styles.Content>
   );

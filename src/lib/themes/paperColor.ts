@@ -31,8 +31,6 @@ const paperColor: TerminalTheme = {
       foreground: "#444444",
     },
   },
-  // titleBar: {  },
-  // buttonColors: {  },
 };
 
 export default paperColor;

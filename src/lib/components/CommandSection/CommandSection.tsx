@@ -53,8 +53,8 @@ function CommandSection({
         </styles.CommandInput>
 
         <styles.CommandOutputContainer>
-          {output.map((line) => (
-            <styles.CommandOutputLine>{line}</styles.CommandOutputLine>
+          {output.map((line, i) => (
+            <styles.CommandOutputLine key={i}>{line}</styles.CommandOutputLine>
           ))}
         </styles.CommandOutputContainer>
       </styles.CommandSection>
