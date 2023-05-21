@@ -1,6 +1,6 @@
 {
   "name": "termblock",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "keywords": [
     "terminal",
@@ -32,9 +32,11 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
     "styled-components": "^6.0.0-rc.1"
   },
   "devDependencies": {
