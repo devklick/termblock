@@ -2,6 +2,13 @@
   "name": "termblock",
   "version": "0.0.0",
   "type": "module",
+  "keywords": [
+    "terminal",
+    "console",
+    "react",
+    "component",
+    "library"
+  ],
   "files": [
     "dist"
   ],
@@ -9,6 +16,14 @@
   "main": "./dist/termblock.umd.js",
   "module": "./dist/termblock.es.js",
   "types": "./dist/termblock.es.d.ts",
+  "homepage": "https://github.com/devklick/termblock#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devklick/termblock"
+  },
+  "bugs": {
+    "url": "https://github.com/devklick/termblock/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
