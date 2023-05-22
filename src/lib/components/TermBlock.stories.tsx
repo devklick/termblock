@@ -1,18 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import TermBlock from "./Terminal";
-// import { ButtonVariants } from "./WindowButtons/WindowButtons.shared";
-import nord from "../themes/nord";
-import oneDarkPro from "../themes/oneDarkPro";
-import paperColor from "../themes/paperColor";
+
 import { CommandSectionProps } from "./CommandSection";
-
-const meta: Meta<typeof TermBlock> = {
-  title: "TermBlock",
-  component: TermBlock,
-};
-
-export const Default: StoryObj<typeof TermBlock> = {};
 
 const commandsWithOverflow: Array<CommandSectionProps> = [
   {
@@ -59,6 +49,34 @@ const commandsWithOverflow: Array<CommandSectionProps> = [
   },
 ];
 
+/**
+ * TermBlock is a simple React component library that allows you to render terminals.
+ * You may find it useful if you want to display, for example, instructions
+ * on how to perform certain tasks in the terminal on your website.
+ */
+const meta: Meta<typeof TermBlock> = {
+  title: "TermBlock",
+  component: TermBlock,
+  tags: ["autodocs"],
+};
+
+/**
+ * This is the default version of TermBlock with no
+ * properties passed into the component.
+ *
+ * Realistically, you probably wouldnt want to do this,
+ * as you would want to display relevant commands
+ * and perhaps apply different styling, but it's an option.
+ */
+export const Default: StoryObj<typeof TermBlock> = {};
+
+/**
+ * In some cases, you may want to display many commands,
+ * or a command that has a long output. You can either allow
+ * the terminal to auto size to fit the terminal content, or
+ * you can apply a fixed height via the `theme.content.height`
+ * prop. If ding the latter, the content will become scrollable.
+ */
 export const Overflow: StoryObj<typeof TermBlock> = {
   args: {
     commands: commandsWithOverflow,
@@ -66,56 +84,6 @@ export const Overflow: StoryObj<typeof TermBlock> = {
       content: {
         height: 320,
       },
-    },
-  },
-};
-
-export const CustomTheme: StoryObj<typeof TermBlock> = {
-  args: {
-    commands: commandsWithOverflow,
-    theme: {
-      content: {
-        colors: {
-          background: "#b4ced1",
-          foreground: "#608386",
-          directory: "#86965c",
-          separator: "#a284b6",
-          scrollbar: "#a284b6",
-        },
-        height: 320,
-      },
-      footer: {
-        colors: {
-          background: "#b4ced1",
-          foreground: "#608386",
-        },
-      },
-      titleBar: {
-        buttons: {
-          colors: {
-            close: "#a53731",
-            max: "#488133",
-            min: "#d3a550",
-          },
-        },
-      },
-    },
-  },
-};
-
-// export const RightButtons: StoryObj<typeof TermBlock> = {
-//   args: {
-//     buttons: { position: "right" },
-//   },
-// };
-
-const themes = { nord, oneDarkPro, paperColor };
-
-export const BuiltInThemes: StoryObj<typeof TermBlock> = {
-  argTypes: {
-    theme: {
-      options: Object.keys(themes),
-      mapping: themes,
     },
   },
 };
