@@ -14,7 +14,6 @@ import { PartialTerminalTheme } from "../..";
 const meta: Meta<typeof TermBlock> = {
   title: "Buttons",
   component: TermBlock,
-  tags: ["autodocs"],
   argTypes: {
     commands: {
       control: false,

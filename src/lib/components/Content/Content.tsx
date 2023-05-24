@@ -12,23 +12,16 @@ interface ContentProps extends DeepPartial<ContentTheme> {
 }
 function Content({
   colors,
+  height,
   commands = [
     {
-      command: "npm install typescript",
+      command: "npm install termblock",
       output: [
         "added 1 package, and audited 2 packages in 520ms",
         "found 0 vulnerabilities",
       ],
     },
-    {
-      command: "npm install @types/node",
-      output: [
-        "added 1 package, and audited 3 packages in 611ms",
-        "found 0 vulnerabilities",
-      ],
-    },
   ],
-  height,
 }: ContentProps) {
   return (
     <styles.Content className="content" colors={colors} height={height}>

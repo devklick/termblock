@@ -8,16 +8,22 @@ import { TerminalTheme } from "./Terminal.shared.ts";
 
 export interface TerminalProps {
   /**
-   * The text to be displayed in the title bar at the top of the TermBlock.
+   * The text to be displayed in the title bar at the top of the terminal.
    */
   title?: string;
+  /**
+   * The information about the commands that should be displayed in the terminal.
+   */
   commands?: Array<CommandSectionProps>;
+  /**
+   * The overrides to be applied to the global theme.
+   */
   theme?: DeepPartial<TerminalTheme>;
 }
 
 function Terminal(props?: TerminalProps): React.JSX.Element {
   return (
-    <styles.TerminalStyle>
+    <styles.Terminal>
       <TitleBar
         title={props?.title}
         buttons={props?.theme?.titleBar?.buttons}
@@ -29,7 +35,7 @@ function Terminal(props?: TerminalProps): React.JSX.Element {
         height={props?.theme?.content?.height}
       />
       <Footer colors={props?.theme?.footer?.colors} />
-    </styles.TerminalStyle>
+    </styles.Terminal>
   );
 }
 

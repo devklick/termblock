@@ -19,7 +19,7 @@ A small, stateless react library that lets you render faux terminals with comman
 For the absolute basic usage, you probably only want to render a single terminal with a single command, and the text that the command outputs. For example:
 
 ```tsx
-import TermBlock from "termblock/";
+import TermBlock from "termblock";
 
 function App() {
   return (
@@ -53,7 +53,7 @@ There are a few built in themes, and I plan to add more in the near future. See 
 You can create your own theme by creating an object that implements either the `TerminalTheme` or `PartialTerminalTheme` interface. For example:
 
 ```ts
-import { TerminalTheme } from "termblock/";
+import { TerminalTheme } from "termblock";
 const customTheme: TerminalTheme = {
   titleBar: {
     colors: { background: "#83a0da", foreground: "#ffffff" },
@@ -91,7 +91,7 @@ If you want to create a global theme, you *must* implement the `TerminalTheme` i
 To configure a theme globally, you need to call the `configureGlobal` function and pass in the theme you want. For example:
 
 ```tsx
-import TermBlock, { themes } from "termblock/";
+import TermBlock, { themes } from "termblock";
 themes.configureGlobal(themes.oneDarkPro);
 ```
 
@@ -102,7 +102,7 @@ Note that you only need to do this once, so probably most suitable to do this in
 In addition to configuring a global theme, you can also pass in a theme to the `TermBlock` component. For example:
 
 ```tsx
-import TermBlock, { themes } from "termblock/";
+import TermBlock, { themes } from "termblock";
 
 function App() {
   return <TermBlock theme={themes.paperColor} />;
@@ -112,7 +112,7 @@ function App() {
 Note that all properties of the theme props are optional. Any values provided will be the priority, and any props omitted will fall back on the global theme. For example, the following will simply override the default button position, and the rest of the global theme will apply:
 
 ```tsx
-import TermBlock, { PartialTerminalTheme }from "termblock/";
+import TermBlock, { PartialTerminalTheme } from "termblock";
 
 const partialCustomTheme: PartialTerminalTheme = { 
   titleBar: { 
