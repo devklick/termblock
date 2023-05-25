@@ -23,7 +23,7 @@ const defaultButtonPosition: Record<ButtonVariant, ButtonPosition | undefined> =
   {
     "mac-os": "left",
     windows: "right",
-    none: null,
+    none: undefined,
   };
 
 const buttonKeys: Record<ButtonType, string> = {

@@ -10,7 +10,7 @@ import { ReactComponent as MaxIcon } from "./max-icon.svg";
 import { ReactComponent as MinIcon } from "./min-icon.svg";
 
 export const WindowButtonsContainer = styled.div<{
-  position: ButtonPosition;
+  position?: ButtonPosition;
 }>`
   position: absolute;
   display: flex;
