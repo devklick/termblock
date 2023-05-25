@@ -4,11 +4,12 @@ import { CommandSectionTheme } from "./CommandSection.shared";
 
 export interface CommandSectionProps extends DeepPartial<CommandSectionTheme> {
   /**
-   * The directory that the command is being executed from.
+   * The text that precedes the command being executed.
+   * This is often the username, current directory etc.
    *
    * @default "~/project"
    */
-  currentDirectory?: string;
+  context?: string;
   /**
    * The command being executed.
    *
@@ -22,11 +23,11 @@ export interface CommandSectionProps extends DeepPartial<CommandSectionTheme> {
    *  "added 1 package, and audited 2 packages in 520ms",
       "found 0 vulnerabilities",
    */
-  output: string[];
+  output?: string[];
 }
 
 function CommandSection({
-  currentDirectory = "~/project",
+  context = "~/project",
   command,
   output,
   colors,
@@ -35,11 +36,11 @@ function CommandSection({
     <>
       <styles.CommandSection>
         <styles.CommandInput>
-          <styles.CurrentDirectory>
-            <styles.CurrentDirectoryText directoryColor={colors?.directory}>
-              {currentDirectory}
-            </styles.CurrentDirectoryText>
-          </styles.CurrentDirectory>
+          <styles.Context>
+            <styles.ContextText color={colors?.directory}>
+              {context}
+            </styles.ContextText>
+          </styles.Context>
 
           <styles.Separator>
             <styles.SeparatorText color={colors?.separator}>
@@ -53,7 +54,7 @@ function CommandSection({
         </styles.CommandInput>
 
         <styles.CommandOutputContainer>
-          {output.map((line, i) => (
+          {output?.map((line, i) => (
             <styles.CommandOutputLine key={i}>{line}</styles.CommandOutputLine>
           ))}
         </styles.CommandOutputContainer>

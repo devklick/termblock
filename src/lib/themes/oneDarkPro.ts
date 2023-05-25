@@ -20,7 +20,7 @@ const oneDarkPro: TerminalTheme = {
     colors: {
       background: "#282c34",
       foreground: "#d7dae0",
-      directory: "#4aa5f0",
+      context: "#4aa5f0",
       separator: "#de73ff",
       scrollbar: "#282c34",
     },

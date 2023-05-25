@@ -11,14 +11,13 @@ export const CommandInput = styled.div`
   flex-direction: row;
 `;
 
-export const CurrentDirectory = styled.div``;
+export const Context = styled.div``;
 
-export const CurrentDirectoryText = styled.div<{
-  directoryColor?: string;
+export const ContextText = styled.div<{
+  color?: string;
 }>`
   font-weight: bold;
-  color: ${(props) =>
-    props.directoryColor ?? globalTheme.content.colors.directory};
+  color: ${(props) => props.color ?? globalTheme.content.colors.context};
 `;
 
 export const Separator = styled.div`

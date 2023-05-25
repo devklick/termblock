@@ -20,7 +20,7 @@ const paperColor: TerminalTheme = {
     colors: {
       background: "#ededed",
       foreground: "#444444",
-      directory: "#0087af",
+      context: "#0087af",
       separator: "#af0000",
       scrollbar: "#dcdcdc",
     },

@@ -11,7 +11,7 @@ const nord: TerminalTheme = {
   },
   content: {
     colors: {
-      directory: "#5e81ac",
+      context: "#5e81ac",
       separator: "#a3be8c",
       scrollbar: "#2e3440",
       background: "#252932",

@@ -5,6 +5,8 @@ import nord from "./nord";
 import oneDarkPro from "./oneDarkPro";
 import paperColor from "./paperColor";
 
+const themes = { nord, oneDarkPro, paperColor };
+
 const nonControlFields = {
   commands: {
     control: false,
@@ -13,7 +15,6 @@ const nonControlFields = {
     control: false,
   },
 };
-const themes = { nord, oneDarkPro, paperColor };
 
 /**
  * Every website is different, and the odds are, if you want to use TermBlock,
@@ -27,9 +28,6 @@ const meta: Meta<typeof TermBlock> = {
   title: "Themes",
   component: TermBlock,
   tags: ["autodocs"],
-  argTypes: {
-    ...nonControlFields,
-  },
 };
 
 /**
@@ -39,6 +37,11 @@ const meta: Meta<typeof TermBlock> = {
  * The default theme is Nord, because who doesn't love Nord?!
  *
  * While there are only a few at the moment, this list will grow in the near future.
+ *
+ * You can either pass a theme in as a prop, or if you want to use one
+ * theme for all terminals you plan on displaying, you can set this globally
+ * by calling the `themes.configureGlobal()` function and passing in the theme
+ * you want to use.
  */
 export const BuiltInThemes: StoryObj<typeof TermBlock> = {
   argTypes: {
@@ -46,6 +49,7 @@ export const BuiltInThemes: StoryObj<typeof TermBlock> = {
       options: Object.keys(themes),
       mapping: themes,
     },
+    ...nonControlFields,
   },
 };
 
@@ -58,6 +62,9 @@ export const BuiltInThemes: StoryObj<typeof TermBlock> = {
  * - HEX value (#00ff00)
  * - RGB Value (rgb(0, 255, 0))
  * - HSL value (hsl(120, 100.00%, 50.00%))
+ *
+ * Again, this can be passed in via props, or configured globally
+ * as mentioned previously.
  */
 export const CustomTheme: StoryObj<typeof TermBlock> = {
   args: {
@@ -79,7 +86,7 @@ export const CustomTheme: StoryObj<typeof TermBlock> = {
         colors: {
           background: "#585e3c",
           foreground: "#b4a681",
-          directory: "#c4a244",
+          context: "#c4a244",
           separator: "#2b2a28",
           scrollbar: "#585e3c",
         },
@@ -91,6 +98,9 @@ export const CustomTheme: StoryObj<typeof TermBlock> = {
         },
       },
     },
+  },
+  argTypes: {
+    ...nonControlFields,
   },
 };
 

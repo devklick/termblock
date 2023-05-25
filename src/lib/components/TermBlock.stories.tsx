@@ -1,62 +1,19 @@
 import { Meta, StoryObj } from "@storybook/react";
-import TermBlock from "./Terminal";
-import { CommandSectionProps } from "./CommandSection";
 
+import TermBlock from "./Terminal";
 import * as Terminal from "./Terminal/Terminal.stories";
 import * as WindowButtons from "./WindowButtons/WindowButtons.stories";
 import * as TitleBar from "./TitleBar/TitleBar.stories";
 import * as Footer from "./Footer/Footer.stories";
 import * as Themes from "../themes/Themes.stories";
 
-const commandsWithOverflow: Array<CommandSectionProps> = [
-  {
-    command: "npm install typescript",
-    output: [
-      "added 1 package, and audited 2 packages in 520ms",
-      "found 0 vulnerabilities",
-    ],
-  },
-  {
-    command: "npm install @types/node",
-    output: [
-      "added 1 package, and audited 3 packages in 611ms",
-      "found 0 vulnerabilities",
-    ],
-  },
-  {
-    command: "npm install typescript",
-    output: [
-      "added 1 package, and audited 2 packages in 520ms",
-      "found 0 vulnerabilities",
-    ],
-  },
-  {
-    command: "npm install @types/node",
-    output: [
-      "added 1 package, and audited 3 packages in 611ms",
-      "found 0 vulnerabilities",
-    ],
-  },
-  {
-    command: "npm install typescript",
-    output: [
-      "added 1 package, and audited 2 packages in 520ms",
-      "found 0 vulnerabilities",
-    ],
-  },
-  {
-    command: "npm install @types/node",
-    output: [
-      "added 1 package, and audited 3 packages in 611ms",
-      "found 0 vulnerabilities",
-    ],
-  },
-];
+type Story = StoryObj<typeof TermBlock>;
 
 /**
- * TermBlock is a simple React component library that allows you to render terminals.
- * You may find it useful if you want to display, for example, instructions
- * on how to perform certain tasks in the terminal on your website.
+ * TermBlock is a simple React component library that allows
+ * you to render faux terminals. You may find it useful if you want
+ * to display, for example, instructions on how to perform certain
+ * tasks in the terminal on your website.
  */
 const meta: Meta<typeof TermBlock> = {
   title: "TermBlock",
@@ -64,78 +21,66 @@ const meta: Meta<typeof TermBlock> = {
   tags: ["autodocs"],
 };
 
-/**
- * This is the default version of TermBlock with no
- * properties passed into the component.
- *
- * Realistically, you probably wouldnt want to do this,
- * as you would want to display relevant commands
- * and perhaps apply different styling, but it's an option.
- */
-export const Default = Terminal.Default;
+/* ============ TERMINAL ============ */
+export const TerminalDefault: Story = {
+  name: "Terminal - Default",
+  ...Terminal.Default,
+};
 
-/**
- * In some cases, you may want to display many commands,
- * or a command that has a long output. You can either allow
- * the terminal to auto size to fit the terminal content, or
- * you can apply a fixed height via the `theme.content.height`
- * prop. If ding the latter, the content will become scrollable.
- */
-export const Overflow: StoryObj<typeof TermBlock> = {
-  args: {
-    commands: commandsWithOverflow,
-    theme: {
-      content: {
-        height: 320,
-      },
-    },
-  },
+export const TerminalCommands: Story = {
+  name: "Terminal - Commands",
+  ...Terminal.Commands,
+};
+
+export const TerminalOverflow: Story = {
+  name: "Terminal - Overflow",
+  ...Terminal.Overflow,
 };
 
 /* ============ THEMES ============ */
-export const ThemesBuiltIn = {
+export const ThemesBuiltIn: Story = {
   name: "Themes - Built In Themes",
   ...Themes.BuiltInThemes,
 };
-export const ThemesCustom = {
+export const ThemesCustom: Story = {
   name: "Themes - Custom Themes",
   ...Themes.CustomTheme,
 };
 
 /* ============ TITLE BAR ============ */
-export const TitleBarDefault = {
+export const TitleBarDefault: Story = {
   name: "TitleBar - Default",
   ...TitleBar.Default,
 };
-export const TitleBarTitle = {
+export const TitleBarTitle: Story = {
   name: "TitleBar - Title",
   ...TitleBar.Title,
 };
-export const TitleBarColors = {
+export const TitleBarColors: Story = {
   name: "TitleBar - Colors",
   ...TitleBar.Colors,
 };
 
 /* ============ BUTTONS ============ */
-export const ButtonPosition = {
+export const ButtonPosition: Story = {
   name: "Buttons - Position",
   ...WindowButtons.Position,
 };
-export const ButtonVariant = {
+export const ButtonVariant: Story = {
   name: "Buttons - Variant",
   ...WindowButtons.Variant,
 };
-export const ButtonColors = {
+export const ButtonColors: Story = {
   name: "Buttons - Colors",
   ...WindowButtons.Colors,
 };
 
 /* ============ FOOTER ============ */
-export const FooterDefault = {
+export const FooterDefault: Story = {
   name: "Footer - Default",
   ...Footer.Default,
 };
-export const FooterColors = {
+export const FooterColors: Story = {
   name: "Footer - Colors",
   ...Footer.Colors,
 };
