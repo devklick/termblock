@@ -15,16 +15,17 @@ export interface WindowButtonsProps extends DeepPartial<WindowButtonsTheme> {}
 
 const defaultButtonOrder: Record<ButtonVariant, DistinctTuple<ButtonType>> = {
   "mac-os": ["close", "min", "max"],
-  none: [],
   windows: ["min", "max", "close"],
+  none: [],
 };
 
-const defaultButtonPosition: Record<ButtonVariant, ButtonPosition | undefined> =
-  {
-    "mac-os": "left",
-    windows: "right",
-    none: undefined,
-  };
+const defaultButtonPosition: Record<
+  Exclude<ButtonVariant, "none">,
+  ButtonPosition
+> = {
+  "mac-os": "left",
+  windows: "right",
+};
 
 const buttonKeys: Record<ButtonType, string> = {
   close: "x",
@@ -102,11 +103,12 @@ function MaxButton({
 
 function WindowButtons({
   variant = "mac-os",
-  position = defaultButtonPosition[variant],
   order = defaultButtonOrder[variant],
+  position,
   colors,
 }: WindowButtonsProps) {
   if (variant === "none") return null;
+  position ??= defaultButtonPosition[variant];
 
   const buttons: Array<React.JSX.Element | null> = order.map((o) => {
     switch (o) {
