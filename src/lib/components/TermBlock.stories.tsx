@@ -70,6 +70,10 @@ export const ButtonVariant: Story = {
   name: "Buttons - Variant",
   ...WindowButtons.Variant,
 };
+export const ButtonOrdering: Story = {
+  name: "Buttons - Ordering",
+  ...WindowButtons.Ordering,
+};
 export const ButtonColors: Story = {
   name: "Buttons - Colors",
   ...WindowButtons.Colors,

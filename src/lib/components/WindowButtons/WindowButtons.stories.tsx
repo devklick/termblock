@@ -1,8 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ButtonPosition, ButtonVariant } from "./WindowButtons.shared";
+import {
+  ButtonPosition,
+  ButtonType,
+  ButtonVariant,
+  DistinctTuple,
+} from "./WindowButtons.shared";
 
-import TermBlock from "../Terminal";
+import TermBlock, { TerminalProps } from "../Terminal";
 import { PartialTerminalTheme } from "../..";
+import { useState } from "react";
+import { StoryFn } from "@storybook/react";
 
 /**
  * TermBlock renders "buttons" on the terminal by default. While
@@ -31,6 +38,7 @@ const positionThemes: Record<ButtonPosition, PartialTerminalTheme> = {
 
 const variantThemes: Record<ButtonVariant, PartialTerminalTheme> = {
   "mac-os": { titleBar: { buttons: { variant: "mac-os" } } },
+  windows: { titleBar: { buttons: { variant: "windows" } } },
   none: { titleBar: { buttons: { variant: "none" } } },
 };
 
@@ -75,6 +83,33 @@ export const Variant: StoryObj<typeof TermBlock> = {
     theme: {
       options: Object.keys(variantThemes),
       mapping: variantThemes,
+    },
+  },
+};
+
+/**
+ * It's possible to control the order of the window buttons.
+ * By default, they will be ordered depending on the button variant:
+ * - `windows`: [`min`, `max`, `close`]
+ * - `mac-os`: [`close`, `min`, `max`]
+ *
+ * However, you can override this by specifying the `order` property.
+ *
+ * Using this approach also allows you to enable only certain buttons,
+ * for example, if you only want the close button you show, you only
+ * specify that in the `order` list:
+ * ```
+ * order: ["close"]
+ * ```
+ */
+export const Ordering: StoryObj<typeof TermBlock> = {
+  args: {
+    theme: {
+      titleBar: {
+        buttons: {
+          order: ["max", "close", "min"],
+        },
+      },
     },
   },
 };
