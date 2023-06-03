@@ -5,7 +5,7 @@ import * as styles from "./Footer.styles";
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface FooterProps extends DeepPartial<FooterTheme> {}
 
-function Footer(props: FooterProps) {
-  return <styles.Footer {...props} />;
+function Footer({ colors, corners = "rounded" }: FooterProps) {
+  return <styles.Footer corners={corners} colors={colors} />;
 }
 export default Footer;

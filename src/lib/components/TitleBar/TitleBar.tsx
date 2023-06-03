@@ -15,9 +15,9 @@ interface TitleBarProps extends DeepPartial<TitleBarTheme> {
 
 function TitleBar({
   title = "TermBlock",
+  corners = "rounded",
   buttons,
   colors,
-  corners,
 }: TitleBarProps) {
   const buttonPosition = buttons?.position ?? "left";
   return (
