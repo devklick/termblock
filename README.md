@@ -46,7 +46,22 @@ Themes can either be configured globally or provided as props when you render ea
 
 ## Built in themes
 
-There are a few built in themes, and I plan to add more in the near future. See the [`themes`](src/lib/themes) folder. The default theme is nord (like in the image above).
+There are a few built in themes, and this list is expected to continue to grow.
+
+### Nord
+![NordTheme](/docs/images/themes/NordTheme.png "Nord Theme")
+
+### One Dark Pro
+![OneDarkProTheme](/docs/images/themes/OneDarkProTheme.png "One Dark Pro Theme")
+
+### Paper Color
+![PaperColorTheme](/docs/images/themes/PaperColorTheme.png "Paper Color Theme")
+
+### Windows 10
+![Windows10Theme](/docs/images/themes/Windows10Theme.png "Windows 10 Theme")
+
+### MacOS
+![MacOsTheme](/docs/images/themes/MacOsTheme.png "MacOS Theme")
 
 ## Custom theme
 
@@ -56,34 +71,39 @@ You can create your own theme by creating an object that implements either the `
 import { TerminalTheme } from "termblock";
 const customTheme: TerminalTheme = {
   titleBar: {
-    colors: { background: "#83a0da", foreground: "#ffffff" },
+    colors: {
+      background: "#2b2a28",
+      foreground: "#c4a244",
+    },
     buttons: {
-      variant: "mac-os",
-      position: "left",
-      colors: { min: "#f1e64b", max: "#9ee660", close: "#e03344" },
+      colors: {
+        close: "#a53731",
+        max: "#585e3c",
+        min: "#b4a681",
+      },
     },
   },
   content: {
     colors: {
-      background: "#bdc6db",
-      foreground: "#333b4d",
-      directory: "#b742ce",
-      separator: "#5041da",
-      scrollbar: "#79da96",
+      background: "#585e3c",
+      foreground: "#b4a681",
+      context: "#c4a244",
+      separator: "#2b2a28",
+      scrollbar: "#585e3c",
     },
   },
   footer: {
     colors: {
-      background: "#bdc6db",
-      foreground: "#333b4d",
+      background: "#585e3c",
+      foreground: "#b4a681",
     },
   },
-};
+},
 ```
-![Custom_Theme](/docs/images/TermBlock_CustomTheme.png "Custom Theme")
+![Custom_Theme](/docs/images/themes/CustomTheme.png "Custom Theme")
 
 ### Note:
-If you want to create a global theme, you *must* implement the `TerminalTheme` interface (see [Configure global theme](#configure-global-theme)). Otherwise, if you just want to override certain styles of the global theme, you can implement `PartialTerminalTheme` and pass that object in to the `TermBlock` component's `theme` prop (see [Theme props](#theme-props)).
+If you want to apply a custom global theme, you *must* implement the `TerminalTheme` interface (see [Configure global theme](#configure-global-theme)). Otherwise, if you just want to override certain styles of the global theme, you can implement `PartialTerminalTheme` and pass that object in to the `TermBlock` component's `theme` prop (see [Theme props](#theme-props)).
 
 
 ## Configure global theme
