@@ -13,7 +13,7 @@ const macOs: TerminalTheme = {
       order: ["close", "min", "max"],
     },
     colors: {
-      background: "#f8f2f7",
+      background: "#edeff0",
       foreground: "#494a49",
     },
     corners: "rounded",
