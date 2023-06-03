@@ -5,8 +5,9 @@ import nord from "./nord";
 import oneDarkPro from "./oneDarkPro";
 import paperColor from "./paperColor";
 import windows10 from "./windows10";
+import macOs from "./macOs";
 
-const themes = { nord, oneDarkPro, paperColor, windows10 };
+const themes = { nord, oneDarkPro, paperColor, windows10, macOs };
 
 const nonControlFields = {
   commands: {
