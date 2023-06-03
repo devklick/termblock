@@ -1,7 +1,8 @@
-import { TerminalTheme } from "../components/Terminal/Terminal.shared";
+import { TerminalTheme } from ".";
 
 const paperColor: TerminalTheme = {
   titleBar: {
+    corners: "rounded",
     colors: {
       background: "#dcdcdc",
       foreground: "#444444",
@@ -26,6 +27,7 @@ const paperColor: TerminalTheme = {
     },
   },
   footer: {
+    corners: "rounded",
     colors: {
       background: "#ededed",
       foreground: "#444444",

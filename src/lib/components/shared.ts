@@ -13,3 +13,5 @@ export interface Colors {
    */
   foreground: string;
 }
+
+export type Corner = "rounded" | "squared";

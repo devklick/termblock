@@ -4,8 +4,9 @@ import TermBlock from "../components/Terminal";
 import nord from "./nord";
 import oneDarkPro from "./oneDarkPro";
 import paperColor from "./paperColor";
+import windows10 from "./windows10";
 
-const themes = { nord, oneDarkPro, paperColor };
+const themes = { nord, oneDarkPro, paperColor, windows10 };
 
 const nonControlFields = {
   commands: {

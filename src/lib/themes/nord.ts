@@ -1,7 +1,8 @@
-import { TerminalTheme } from "../components/Terminal/Terminal.shared";
+import { TerminalTheme } from ".";
 
 const nord: TerminalTheme = {
   titleBar: {
+    corners: "rounded",
     colors: { background: "#2e3440", foreground: "#d9dce3" },
     buttons: {
       variant: "mac-os",
@@ -19,6 +20,7 @@ const nord: TerminalTheme = {
     },
   },
   footer: {
+    corners: "rounded",
     colors: {
       background: "#252932",
       foreground: "#d9dce3",

@@ -63,7 +63,12 @@ function CloseButton({
     case "mac-os":
       return MacOSButton({ variant, colors, type: "close" });
     case "windows":
-      return <styles.MSWindowCloseButton fill={colors?.close} />;
+      return (
+        <styles.MSWindowCloseButton
+          key={buttonKeys["close"]}
+          fill={colors?.close}
+        />
+      );
     default:
       return null;
   }
@@ -79,7 +84,12 @@ function MinButton({
     case "mac-os":
       return MacOSButton({ variant, colors, type: "min" });
     case "windows":
-      return <styles.MSWindowMinButton fill={colors?.close} />;
+      return (
+        <styles.MSWindowMinButton
+          key={buttonKeys["min"]}
+          fill={colors?.close}
+        />
+      );
     default:
       return null;
   }
@@ -95,7 +105,12 @@ function MaxButton({
     case "mac-os":
       return MacOSButton({ variant, colors, type: "max" });
     case "windows":
-      return <styles.MSWindowMaxButton fill={colors?.close} />;
+      return (
+        <styles.MSWindowMaxButton
+          key={buttonKeys["max"]}
+          fill={colors?.close}
+        />
+      );
     default:
       return null;
   }

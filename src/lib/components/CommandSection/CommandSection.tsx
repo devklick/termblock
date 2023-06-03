@@ -37,7 +37,7 @@ function CommandSection({
       <styles.CommandSection>
         <styles.CommandInput>
           <styles.Context>
-            <styles.ContextText color={colors?.directory}>
+            <styles.ContextText color={colors?.context}>
               {context}
             </styles.ContextText>
           </styles.Context>

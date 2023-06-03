@@ -96,7 +96,7 @@ export const Commands: Story = {
         command: "whoami",
         output: ["root"],
         context: "root@machine",
-        colors: { directory: "#994f4f", separator: "#47629c" },
+        colors: { context: "#994f4f", separator: "#47629c" },
       },
     ],
   },

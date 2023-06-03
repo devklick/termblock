@@ -28,13 +28,17 @@ function Terminal(props?: TerminalProps): React.JSX.Element {
         title={props?.title}
         buttons={props?.theme?.titleBar?.buttons}
         colors={props?.theme?.titleBar?.colors}
+        corners={props?.theme?.titleBar?.corners}
       />
       <Content
         commands={props?.commands}
         colors={props?.theme?.content?.colors}
         height={props?.theme?.content?.height}
       />
-      <Footer colors={props?.theme?.footer?.colors} />
+      <Footer
+        colors={props?.theme?.footer?.colors}
+        corners={props?.theme?.footer?.corners}
+      />
     </styles.Terminal>
   );
 }

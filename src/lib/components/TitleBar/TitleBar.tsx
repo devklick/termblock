@@ -13,10 +13,15 @@ interface TitleBarProps extends DeepPartial<TitleBarTheme> {
   title?: string;
 }
 
-function TitleBar({ title = "TermBlock", buttons, colors }: TitleBarProps) {
+function TitleBar({
+  title = "TermBlock",
+  buttons,
+  colors,
+  corners,
+}: TitleBarProps) {
   const buttonPosition = buttons?.position ?? "left";
   return (
-    <styles.TitleBar colors={colors}>
+    <styles.TitleBar colors={colors} corners={corners}>
       {buttonPosition === "left" && <WindowButtons {...buttons} />}
       <styles.Title>{title}</styles.Title>
       {buttonPosition === "right" && <WindowButtons {...buttons} />}

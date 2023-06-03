@@ -4,7 +4,7 @@
  */
 export interface CommandSectionTheme {
   colors: {
-    directory: string;
+    context: string;
     separator: string;
   };
 }

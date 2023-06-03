@@ -1,7 +1,8 @@
-import { TerminalTheme } from "../components/Terminal/Terminal.shared";
+import { TerminalTheme } from ".";
 
 const oneDarkPro: TerminalTheme = {
   titleBar: {
+    corners: "rounded",
     colors: {
       background: "#21252b",
       foreground: "#d7dae0",
@@ -26,6 +27,7 @@ const oneDarkPro: TerminalTheme = {
     },
   },
   footer: {
+    corners: "rounded",
     colors: {
       background: "#282c34",
       foreground: "#d7dae0",
