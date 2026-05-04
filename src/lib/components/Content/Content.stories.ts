@@ -6,9 +6,6 @@ type Story = StoryObj<typeof Content>;
 const meta: Meta<typeof Content> = {
   title: "Content",
   component: Content,
-  args: {
-    overflow: "scroll",
-  },
   argTypes: {
     commands: {
       control: false,

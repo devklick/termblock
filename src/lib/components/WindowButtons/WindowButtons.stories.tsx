@@ -1,15 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import {
-  ButtonPosition,
-  ButtonType,
-  ButtonVariant,
-  DistinctTuple,
-} from "./WindowButtons.shared";
+import { ButtonPosition, ButtonVariant } from "./WindowButtons.shared";
 
-import TermBlock, { TerminalProps } from "../Terminal";
+import TermBlock from "../Terminal";
 import { PartialTerminalTheme } from "../..";
-import { useState } from "react";
-import { StoryFn } from "@storybook/react";
 
 /**
  * TermBlock renders "buttons" on the terminal by default. While

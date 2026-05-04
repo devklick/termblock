@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 
 import TermBlock from "./Terminal";
 import * as Terminal from "./Terminal/Terminal.stories";

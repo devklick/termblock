@@ -5,9 +5,9 @@ import {
   ButtonVariant,
 } from "./WindowButtons.shared";
 import { globalTheme } from "../../themes/config";
-import { ReactComponent as CloseIcon } from "./close-icon.svg";
-import { ReactComponent as MaxIcon } from "./max-icon.svg";
-import { ReactComponent as MinIcon } from "./min-icon.svg";
+import CloseIcon from "./close-icon.svg?react";
+import MaxIcon from "./max-icon.svg?react";
+import MinIcon from "./min-icon.svg?react";
 
 export const WindowButtonsContainer = styled.div<{
   position: ButtonPosition;

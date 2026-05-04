@@ -9,15 +9,6 @@ import macOs from "./macOs";
 
 const themes = { nord, oneDarkPro, paperColor, windows10, macOs };
 
-const nonControlFields = {
-  commands: {
-    control: false,
-  },
-  title: {
-    control: false,
-  },
-};
-
 /**
  * Every website is different, and the odds are, if you want to use TermBlock,
  * you're probably going to want it fit match the design of your site. Perhaps
@@ -51,7 +42,12 @@ export const BuiltInThemes: StoryObj<typeof TermBlock> = {
       options: Object.keys(themes),
       mapping: themes,
     },
-    ...nonControlFields,
+    commands: {
+      control: false,
+    },
+    title: {
+      control: false,
+    },
   },
 };
 
@@ -102,7 +98,12 @@ export const CustomTheme: StoryObj<typeof TermBlock> = {
     },
   },
   argTypes: {
-    ...nonControlFields,
+    commands: {
+      control: false,
+    },
+    title: {
+      control: false,
+    },
   },
 };
 
