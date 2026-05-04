@@ -1,6 +1,6 @@
 {
   "name": "termblock",
-  "version": "0.0.3",
+  "version": "1.0.1",
   "type": "module",
   "keywords": [
     "terminal",
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/devklick/termblock#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devklick/termblock"
+    "url": "git+https://github.com/devklick/termblock.git"
   },
   "bugs": {
     "url": "https://github.com/devklick/termblock/issues"

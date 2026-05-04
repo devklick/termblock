@@ -16,7 +16,7 @@ const dirname =
 export default defineConfig({
   plugins: [
     react(),
-    dts(),
+    dts({ insertTypesEntry: true }),
     svgr({
       svgrOptions: {
         // svgr options
