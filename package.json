@@ -1,6 +1,6 @@
 {
   "name": "termblock",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "keywords": [
     "terminal",
@@ -13,9 +13,9 @@
     "dist"
   ],
   "license": "MIT",
-  "main": "./dist/termblock.umd.js",
+  "main": "./dist/termblock.cjs.js",
   "module": "./dist/termblock.es.js",
-  "types": "./dist/termblock.es.d.ts",
+  "types": "./dist/index.d.ts",
   "homepage": "https://github.com/devklick/termblock#readme",
   "repository": {
     "type": "git",

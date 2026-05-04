@@ -15,7 +15,9 @@ const dirname =
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      jsxRuntime: "automatic",
+    }),
     dts({ insertTypesEntry: true }),
     svgr({
       svgrOptions: {
@@ -25,13 +27,15 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/lib/index.ts"),
+      entry: path.resolve(dirname, "src/lib/index.ts"),
       name: "termblock",
-      formats: ["es", "umd"],
+      formats: ["es", "cjs"],
       fileName: (format) => `termblock.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "styled-components"],
+      external: (id) =>
+        ["react", "react-dom", "styled-components"].includes(id) ||
+        id.startsWith("react/"),
       output: {
         exports: "named",
         globals: {
